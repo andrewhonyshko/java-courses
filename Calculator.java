@@ -9,15 +9,6 @@ public class Calculator{
 		this.params=listArgs;
 	}
 	
-	//public void add(ArrayList<Integer> params)
-	//{
-		//this.listArgs=params;
-	//	for(Integer param:params)
-		//{
-			//this.result+=param;
-		//}
-		
-	//}
 	public void add()
 	{
 		//this.listArgs=params;
@@ -35,12 +26,12 @@ public class Calculator{
 			if(i==0)
 			{	
 				this.result=param;
+				i++;
 			}
 			else
 			{
 				this.result-=param;
 			}
-			i++;
 			
 		}
 	}
@@ -52,12 +43,13 @@ public class Calculator{
 			if(i==0)
 			{	
 				this.result=param;
+				i++;
 			}
 			else
 			{
 				this.result*=param;
 			}
-			i++;
+			
 			
 		}
 	}
@@ -69,12 +61,13 @@ public class Calculator{
 			if(i==0)
 			{	
 				this.result=param;
+				i++;
+
 			}
 			else
 			{
 				this.result/=param;
 			}
-			i++;
 			
 		}
 	}
