@@ -1,23 +1,41 @@
 import java.util.ArrayList;
+/**
+* Класс реалезует калькулятор
+*/
 public class Calculator{
 	
+	/**
+	*Результат вычисление
+	*/
 	private int result;
+	/**
+	* Аргументы для вычисление
+	*/
 	private ArrayList<Integer> params;
 	
-	public Calculator(ArrayList<Integer> listArgs)
+	/**
+	* Конструктор
+	* @param listArgs Список аргументів
+	*/
+	public Calculator(ArrayList<Integer> listArgs )
 	{
+		super();
 		this.params=listArgs;
 	}
-	
+	/**
+	*	Додаэм аргументи
+	*/
 	public void add()
 	{
-		//this.listArgs=params;
 		for(Integer param:params)
 		{
 			this.result+=param;
 		}
 		
 	}
+	/**
+	* Віднімаємо аргументи
+	*/
 	public void minus()
 	{
 		int i=0;
@@ -35,6 +53,9 @@ public class Calculator{
 			
 		}
 	}
+	/**
+	* Множимо аргументи
+	*/
 	public void multiply()
 	{
 		int i=0;
@@ -53,6 +74,9 @@ public class Calculator{
 			
 		}
 	}
+	/**
+	* Ділимо аргументи
+	*/
 	public void div()
 	{
 		int i=0;
@@ -71,22 +95,32 @@ public class Calculator{
 			
 		}
 	}
-	
+	/**
+	* Отримуємо результат 
+	*/
 	public int getResult()
 	{
 		return this.result;
 	}
+	/**
+	* Очищщаємо результат
+	*/
 	public void clearResult()
 	{
 		this.result=0;
 	}
-	public boolean isInteger(String strParam)
+	/**
+	* Перевірка, чи отримане аргумент є цілим числом
+	* @param param отриманий аргумент
+	* @throws nfe вийде із програми, якщо аргумент, не ціле число
+	*/
+	public boolean isInteger(String param)
 	{
-		if(strParam==null)
+		if(param==null)
 			return false;
 		try
 		{
-			int intParam=Integer.parseInt(strParam);
+			int intParam=Integer.parseInt(param);
 		}
 		catch(NumberFormatException nfe)
 		{
@@ -94,25 +128,27 @@ public class Calculator{
 		}
 		return true;
 	}
+	/**
+	* Вибір операцій
+	* @param numOperation вказати номер операцій
+	* @param params список аргументів
+	*/
 	public void choiceOperation(String numOperation,ArrayList<Integer> params)
 	{
-		
-		
-		//String numOperation=scan.next();
 		
 		switch(numOperation)
 		{
 			case "1":
-				add();
+				this.add();//додавання
 				break;
 			case "2":
-				this.minus();
+				this.minus();//віднімання
 				break;
 			case "3":
-				multiply();
+				this.multiply();//множення
 				break;
 			case "4":
-				div();
+				this.div();//ділення
 				break;
 		}
 	}

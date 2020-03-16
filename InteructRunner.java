@@ -17,7 +17,6 @@ public class InteructRunner{
 			String argument="";
 			int argInt;
 			
-			//System.out.prinln("Choice operation\n 1:");
 			while(!exit.equals("yes"))
 			{
 				//listArgs.clear();
